@@ -1,0 +1,27 @@
+.top-nav {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav .title {
+    margin-right: 20px; /* Adjust the spacing as needed */
+    font-size: x-large;
+    color: rgb(109, 101, 104)
+}
+
+.top-nav .search-box {
+    margin-right: 10px; /* Adjust the spacing as needed */
+    height: 25px;
+    width: 250px;
+    font-size: medium;
+}
+
+.top-nav .search-button {
+    height: 30px; 
+    margin-left:-12px;
+    font-weight: bold;
+}
+
+.top-nav .profile-links {
+    margin-left: 10px; /* Adjust the spacing as needed */
+}
