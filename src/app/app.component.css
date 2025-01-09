@@ -4,6 +4,7 @@
 }
 
 .top-nav .title {
+    margin-left: 15px; /* Adjust the spacing as needed */
     margin-right: 20px; /* Adjust the spacing as needed */
     font-size: x-large;
     color: rgb(109, 101, 104)
@@ -12,16 +13,43 @@
 .top-nav .search-box {
     margin-right: 10px; /* Adjust the spacing as needed */
     height: 25px;
-    width: 250px;
+    width: 350px;
     font-size: medium;
+}
+.top-nav .search-box:focus {
+    border: none;
+    outline: none;
 }
 
 .top-nav .search-button {
     height: 30px; 
     margin-left:-12px;
     font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
-.top-nav .profile-links {
-    margin-left: 10px; /* Adjust the spacing as needed */
+.top-nav .search-button:focus {
+    border: none;
+    outline: none;
+    color: darkmagenta;
+    text-decoration: underline;
+}
+
+.top-nav .links {
+    margin-left: auto; /* Adjust the spacing as needed */
+    display: flex;
+    gap: 10px;
+    width: auto;
+    justify-content: flex-end;
+}
+
+.top-nav .search-icon {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.top-nav .add-product {
+    margin-left: 7px;
 }
