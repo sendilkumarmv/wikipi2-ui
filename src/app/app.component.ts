@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { RouterOutlet } from '@angular/router';
+import { ModalDialogComponent } from './shared/components/modal-dialog/modal-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'wikipi-ui';
-
+  isMenuForSession = true;
+  readonly dialog = inject(MatDialog);
 
   onSearch() {
-    console.log('searching...');
   }
+
+  onAbout() {
+    const dialogRef = this.dialog.open(ModalDialogComponent,);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  } 
 }

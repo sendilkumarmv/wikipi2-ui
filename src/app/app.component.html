@@ -1,48 +1,35 @@
 
 <div class="top-nav">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="main menu">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item *whenSession="isMenuForSession">
             <mat-icon>view_list</mat-icon>
             <span>Manage Products</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item *whenSession="isMenuForSession">
             <mat-icon>inbox</mat-icon>
             <span>Inbox</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item *whenSession="isMenuForSession">
             <mat-icon>notifications_active</mat-icon>
             <span>Notifications</span>
         </button>
-        <button mat-menu-item>
+        <div *whenSession="true">
+            <hr/>
+        </div>
+        <button mat-menu-item (click)="onAbout()">
             <mat-icon>info</mat-icon>
             <span>About</span>
         </button>
     </mat-menu>
-    <h2 class="title">WIKIPI</h2>
-    <div class="search-wrapp">
+    <h2 class="title">WikiPI</h2>
+    <div class="search-container">
         <mat-icon class="search-icon">search</mat-icon>
-        <input class="search-box" type="text" style="border: none;"/>
+        <input type="text" placeholder="Search WikiPI"/>
         <button class="search-button" (click)="onSearch()">Search</button>
     </div>
-    <a mat-button class="add-product"><mat-icon>add</mat-icon>Add Product</a>
-    <div class="links">
-        <button mat-button><mat-icon>person_add</mat-icon>Signup</button>
-        <button mat-button><mat-icon>login</mat-icon>Log in</button>
-        <button mat-button [matMenuTriggerFor]="profileManu"><mat-icon>account_circle</mat-icon>Account</button>
-        <mat-menu #profileManu>
-            <button mat-menu-item>
-                <mat-icon>person</mat-icon>
-                <span>Profile</span>
-            </button>
-            <button mat-menu-item>
-                <mat-icon>settings_account_box</mat-icon>
-                <span>Settings</span>
-            </button>
-        </mat-menu>
-        <a mat-button href="https://www.google.com/" target="_blank"><mat-icon>logout</mat-icon>Logout</a>
-    </div>
+    <a mat-button class="add-product" *whenSession="isMenuForSession"><mat-icon>add</mat-icon>Add Product</a>
 </div>
 <router-outlet></router-outlet>
