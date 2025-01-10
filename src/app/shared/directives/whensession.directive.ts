@@ -15,13 +15,23 @@ export class WhensessionDirective {
 
     @Input()
     set whenSession(condition: boolean) {
-      const isActiveSession = this.sessionService.isActiveSession();
-      if(isActiveSession && condition && !this.visible) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-        this.visible = true;
-      } else if(!isActiveSession && !condition && this.visible) {
-        this.viewContainer.clear();
-        this.visible = false;
+      if(condition) {
+        const isActiveSession = this.sessionService.isActiveSession();
+        if(isActiveSession && !this.visible) {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+          this.visible = true;
+        } else {
+          this.viewContainer.clear();
+          this.visible = false;
+        }
+      } else {
+        if(!this.visible) {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+          this.visible = true;
+        } else {
+          this.viewContainer.clear();
+          this.visible = false;
+        }
       }
     }
 }

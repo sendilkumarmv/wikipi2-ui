@@ -10,7 +10,7 @@ import { ModalDialogComponent } from './shared/components/modal-dialog/modal-dia
 })
 export class AppComponent {
   title = 'wikipi-ui';
-  isMenuForSession = true;
+  isMenuForSession = false;
   readonly dialog = inject(MatDialog);
 
   onSearch() {

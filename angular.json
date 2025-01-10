@@ -57,6 +57,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "ssl": true,
+            "sslCert": "certificate/localhost.crt",
+            "sslKey": "certificate/localhost.key",
+            "disableHostCheck": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "wikipi-ui:build:production"
