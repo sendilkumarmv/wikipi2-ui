@@ -1,10 +1,9 @@
-
 <div class="top-nav">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="main menu">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item *whenSession="isMenuForSession">
+        <button mat-menu-item *whenSession="isMenuForSession" (click)="manageProducts()">
             <mat-icon>view_list</mat-icon>
             <span>Manage Products</span>
         </button>
@@ -13,8 +12,8 @@
             <span>Inbox</span>
         </button>
         <button mat-menu-item *whenSession="isMenuForSession">
-            <mat-icon>notifications_active</mat-icon>
-            <span>Notifications</span>
+            <mat-icon matBadge="8" matBadgePosition="after">notifications_active</mat-icon>
+            <span >Notifications</span>
         </button>
         <div *whenSession="true">
             <hr/>
@@ -27,9 +26,19 @@
     <h2 class="title">WikiPI</h2>
     <div class="search-container">
         <mat-icon class="search-icon">search</mat-icon>
-        <input type="text" placeholder="Search WikiPI"/>
+        <input type="text" placeholder="Search WikiPI" />
         <button class="search-button" (click)="onSearch()">Search</button>
     </div>
-    <a mat-button class="add-product" *whenSession="isMenuForSession"><mat-icon>add</mat-icon>Add Product</a>
+    <div class="account-container">
+        <button mat-icon-button [matMenuTriggerFor]="accountMenu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #accountMenu>
+            <button mat-menu-item (click)="signUp()"><mat-icon>person_add</mat-icon>signup</button>
+            <button mat-menu-item *whenSession="isMenuForSession"><mat-icon>settings</mat-icon>Settings & Profile</button>
+            <button mat-menu-item *whenSession="isMenuForSession"><mat-icon>logout</mat-icon>Logout</button>
+        </mat-menu>
+    </div>
 </div>
+<app-breadcrumb></app-breadcrumb>
 <router-outlet></router-outlet>
