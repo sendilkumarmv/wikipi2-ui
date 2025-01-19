@@ -1,4 +1,6 @@
-<div >
-    <div><h3>Create Account</h3></div>
-    <div><p></p></div>
-</div>
+<form [formGroup] = "createForm">
+    <input type="text" formControlName = "firstName">
+    <input type="text" formControlName = "lastName">
+    <input type="text" formControlName = "emailid">
+    <button (click)="createAccount()">Create Account</button>
+</form>
