@@ -7,6 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const userRoutes: Routes = [
   { path: '', component: CreateAccountComponent, data: { breadCrumb: 'Create Account'} },
@@ -24,7 +28,11 @@ const userRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [
    UserService 

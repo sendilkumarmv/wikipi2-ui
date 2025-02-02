@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+mat-grid-tile {
+  background-color: rgb(193, 167, 167);
+}
